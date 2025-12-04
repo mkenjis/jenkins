@@ -1,10 +1,11 @@
 pipeline {
-    agent { 
-        dockerfile {
-            label 'flask_python_img'
-	}
-    }
+    agent none
     stages {
+        stage('Build') {
+	    steps {
+	        sh 'docker image build -t python_img .'
+	    }
+	}
         stage('Test') {
             steps {
                 sh 'python -version'
