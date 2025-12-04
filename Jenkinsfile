@@ -1,5 +1,9 @@
 pipeline {
-    agent { dockerfile true }
+    agent { 
+        dockerfile {
+            label 'flask_python_img'
+	}
+    }
     stages {
         stage('Test') {
             steps {
