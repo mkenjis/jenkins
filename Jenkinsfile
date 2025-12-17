@@ -6,6 +6,7 @@ pipeline {
             steps {
 	        sh 'docker image build -t python_flask_img .'
                 sh 'docker image ls'
+		sh 'echo "DOCKER_USER is $DOCKER_USER"'
             }
         }
     }
