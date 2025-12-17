@@ -8,7 +8,7 @@ pipeline {
                 sh 'docker image ls'
 		sh 'echo "DOCKER_USER is $DOCKER_USER"'
 		sh 'echo "Trustn0" | docker login --username mkenjis --password-stdin'
-		sh 'docker image push mkenjis/python_flask_img'
+		sh 'docker image push --quiet mkenjis/python_flask_img'
             }
         }
     }
